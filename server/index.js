@@ -8,15 +8,17 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
-
+//routes
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
 import postRoutes from "./routes/posts.js";
 import { createPost } from "./controllers/posts.js";
-
+//controllers
 import { register } from "./controllers/auth.js";
+//middleware
 import { verifyToken } from "./middleware/auth.js";
 
+// EXPRESS CONFIGURATION
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config();
@@ -39,7 +41,6 @@ const storage = multer.diskStorage({
         cb(null, req.body.name);
     },
     }); 
-
 const upload = multer({storage});
 
 // MONGO DB CONNECTION
