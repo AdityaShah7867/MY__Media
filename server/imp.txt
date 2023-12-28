@@ -1,0 +1,6 @@
+3 user routes 
+
+personal
+post 
+firends list
+add/del frineds
