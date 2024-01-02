@@ -1,22 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Login from "./Pages/Auth/Login";
+import Intro from "./Pages/Intro";
 
-function App() {
+const App = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-      }}
-    >
-      <h1 style={{ fontSize: '24px', textAlign: 'center' }}>
-        Hmm... You're Stalking  my GitHub ! <br/>
-        great Project coming soon !
-      </h1>
-    </div>
+    
+        <Router>
+
+          <ToastContainer />
+          <Routes>
+            <Route path="/" element={<Intro />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </Router>
+ 
   );
 };
 
